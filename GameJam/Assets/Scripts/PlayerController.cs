@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public bool estaPulando;
     public bool puloDuplo;
 
+    public ProjectileBehaviour ProjectilePrefab;
+    public Transform LaunchOffset;
+
     private Rigidbody2D personagem;
 
     void Start()
@@ -22,6 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         Corre();
         Pula();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
+        }
     }
 
     void Corre()
