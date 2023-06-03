@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
 
     public bool estaPulando;
     public bool puloDuplo;
+    public bool hasWeapon = true;
 
-    public ProjectileBehaviour ProjectilePrefab;
+    public ProjectileBehaviour ProjectilePre;
     public Transform LaunchOffset;
 
 
@@ -32,9 +33,15 @@ public class PlayerController : MonoBehaviour
 
     void Arremessa()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && hasWeapon == true)
         {
-            Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
+            hasWeapon = false;
+            Instantiate(ProjectilePre, LaunchOffset.position, LaunchOffset.rotation);
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            hasWeapon = true;
+            
         }
     }
 

@@ -329,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875491094}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalPosition: {x: 0.57, y: 0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -654,7 +654,8 @@ MonoBehaviour:
   direcao: 
   estaPulando: 0
   puloDuplo: 0
-  ProjectilePrefab: {fileID: 1493810027582552129, guid: 7b4cbf9d5b10b7f44a5511efd06384d0, type: 3}
+  hasWeapon: 1
+  ProjectilePre: {fileID: 4603010539064410935, guid: 7b4cbf9d5b10b7f44a5511efd06384d0, type: 3}
   LaunchOffset: {fileID: 875491095}
 --- !u!212 &1649781201
 SpriteRenderer:
@@ -848,7 +849,7 @@ GameObject:
   - component: {fileID: 2146194617}
   m_Layer: 8
   m_Name: "Ch\xE3o (1)"
-  m_TagString: Untagged
+  m_TagString: parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -866,7 +867,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.009917557, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -877,7 +878,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0198354, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &2146194618
 SpriteRenderer:

@@ -8,12 +8,17 @@ public class ProjectileBehaviour : MonoBehaviour
     private void Update()
     {
         Arremesso();
+        if (Input.GetButtonDown("Fire2"))
+        {
+            
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.tag == "parede")
         {
-            Destroy(gameObject);
+            speedGarfo =0f;
         }
     }
     void Arremesso()
