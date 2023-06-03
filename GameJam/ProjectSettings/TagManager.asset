@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - parede
+  - "ch\xE3o"
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Player
   - "Ch\xE3o"
-  - 
+  - garfo
   - 
   - 
   - 

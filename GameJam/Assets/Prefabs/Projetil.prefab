@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4603010539064410935}
   - component: {fileID: 3675335693924757435}
   - component: {fileID: -2860752802936163813}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projetil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 853446751103125419}
   - component: {fileID: 71340346752793386}
   - component: {fileID: 374292732623464086}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjetilGarfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour
 
     public ProjectileBehaviour ProjectilePre;
     public Transform LaunchOffset;
+    public Transform feet;
 
+    public GameObject garfoquica;
 
     private Rigidbody2D personagem;
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         Corre();
         Pula();
         Arremessa();
+        Quica();
     }
 
     void Arremessa()
@@ -89,8 +92,17 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.layer == 8)
         {
+            forcaDoPuloDuplo = 10;
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
+            
+        }
+        if(collision.gameObject.layer == 9)
+        {
+            forcaDoPuloDuplo = 20;
+            estaPulando = false;
+            Debug.Log("estaPulando = " + estaPulando);
+            
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -100,5 +112,21 @@ public class PlayerController : MonoBehaviour
             estaPulando = true;
             Debug.Log ("estaPulando = " + estaPulando);
         }
+        if(collision.gameObject.layer == 9)
+        {
+            estaPulando = true;
+            Debug.Log("estaPulando = " + estaPulando);
+        }
+    }
+    void Quica()
+    {
+        if (estaPulando)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                garfoquica.SetActive(true);
+            }
+        }
+
     }
 }
