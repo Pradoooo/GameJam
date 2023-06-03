@@ -3,13 +3,22 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
-    public float speed = 4.5f;
+    public float speedGarfo = 4.5f;
+
     private void Update()
     {
-        transform.position += -transform.right * Time.deltaTime * speed;
+        Arremesso();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (collision.gameObject.layer == 8)
+        {
+            Destroy(gameObject);
+        }
     }
+    void Arremesso()
+    {
+        transform.position += -transform.right * Time.deltaTime * speedGarfo;
+    }
+   
 }

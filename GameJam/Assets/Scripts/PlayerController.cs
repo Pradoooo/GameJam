@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     public float velocidade;
     public float forcaDoPulo;
     public float forcaDoPuloDuplo;
+    public string direcao;
 
     public bool estaPulando;
     public bool puloDuplo;
 
     public ProjectileBehaviour ProjectilePrefab;
     public Transform LaunchOffset;
+
 
     private Rigidbody2D personagem;
 
@@ -25,6 +27,11 @@ public class PlayerController : MonoBehaviour
     {
         Corre();
         Pula();
+        Arremessa();
+    }
+
+    void Arremessa()
+    {
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, LaunchOffset.rotation);
@@ -37,10 +44,12 @@ public class PlayerController : MonoBehaviour
         transform.position += corrida * Time.deltaTime * velocidade;
         if (Input.GetAxis("Horizontal") > 0f)
         {
+            direcao = "direita";
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         if (Input.GetAxis("Horizontal") < 0f)
         {
+            direcao = "esquerda";
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         //if (Input.GetAxis("Horizontal") == 0f)
