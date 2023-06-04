@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class Inimigo1 : MonoBehaviour
 {
-    private Rigidbody2D rig;
-    //private Animator anim;
-
     public float speed;
+    public bool direcao;
 
-    public Transform rightCol;
-    public Transform leftCol;
-
-    public Transform headPoint;
-
-    private bool colliding;
-
-    void Start()
-    {
-        rig = GetComponent<Rigidbody2D>();
-        //anim = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        rig.velocity = new Vector2(speed, rig.velocity.y);
+        transform.position += -transform.right * Time.deltaTime * speed;
+    }
 
-        colliding = Physics2D.Linecast(rightCol.position, leftCol.position);
-
-        if (colliding)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "paredeDireita")
         {
-
+            Flip();
+            direcao = true;
+        }
+        if (collision.gameObject.tag == "paredeEsquerda")
+        {
+            Flip();
+            direcao = false;
         }
     }
+
+    void Flip()
+    {
+        if (!direcao)
+        {
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
+
+        if (direcao)
+        {
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+    }
+
 }

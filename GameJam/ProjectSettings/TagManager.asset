@@ -7,11 +7,13 @@ TagManager:
   - parede
   - "ch\xE3o"
   - enemy
+  - paredeDireita
+  - paredeEsquerda
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - background
   - Water
   - UI
   - 

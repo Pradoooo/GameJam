@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4659e5b8dc67c8b49a3d0b6d1bf7f2e2
+guid: 6deeb19feeefab14faf4f8aecf054e58
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_SemGarfo_0
+      name: Alien01-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74fa9da4cdfc36347ac8d8d686d18fc3
-      internalID: -1427700124
+      spriteID: 806b3811000b60743875668ba142de3a
+      internalID: 952191701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_SemGarfo_1
+      name: Alien01-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,71 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd05ccdbda2b6714384afa92ee2556e0
-      internalID: -1849180491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_SemGarfo_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 462c244f825bf4f408dc9683beffe6f6
-      internalID: -55798025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_SemGarfo_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a4bdf01913e84f44bcccd8ca495f108
-      internalID: -145275305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_SemGarfo_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f704dcea2dac2a140bd55c5bcc608c6f
-      internalID: 205410741
+      spriteID: 86e057ae217200e4397f8858ae379aa5
+      internalID: 702557799
       vertices: []
       indices: 
       edges: []
@@ -232,11 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_SemGarfo_3: -145275305
-      Idle_SemGarfo_2: -55798025
-      Idle_SemGarfo_1: -1849180491
-      Idle_SemGarfo_4: 205410741
-      Idle_SemGarfo_0: -1427700124
+      Alien01-Sheet_1: 702557799
+      Alien01-Sheet_0: 952191701
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
