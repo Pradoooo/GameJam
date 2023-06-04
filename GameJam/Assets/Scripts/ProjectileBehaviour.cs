@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class ProjectileBehaviour : MonoBehaviour
 {
+    [SerializeField] public GameObject ProjetilGarfo;
     public float speedGarfo = 4.5f;
 
+    private void Start()
+    {
+       //rd  GetComponent<Rigidbody2D>();
+    }
     private void Update()
     {
         Arremesso();
@@ -16,9 +21,9 @@ public class ProjectileBehaviour : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "parede")
+        if (collision.gameObject.tag == "chão")
         {
-            speedGarfo =0f;
+            speedGarfo = 0f;
         }
     }
     void Arremesso()
