@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
 
+    [SerializeField] GameObject vidaOn0;
     [SerializeField] GameObject vidaOn1;
     [SerializeField] GameObject vidaOn2;
     [SerializeField] GameObject vidaOn3;
@@ -176,25 +177,33 @@ public class PlayerController : MonoBehaviour
         Debug.Log(vida);
         if (vida == 1)
         {
+            vidaOn0.SetActive(false);
             vidaOn1.SetActive(true);
             vidaOn2.SetActive(false);
-        }
+            vidaOn3.SetActive(false);
+        }else
         if (vida == 2)
         {
+            vidaOn0.SetActive(false);
+            vidaOn1.SetActive(false);
             vidaOn2.SetActive(true);
             vidaOn3.SetActive(false);
-        }
+        }else
         if (vida == 3)
         {
+            vidaOn0.SetActive(false);
+            vidaOn1.SetActive(false);
+            vidaOn2.SetActive(false);
             vidaOn3.SetActive(true);
-        }
+        }else
 
         if (vida <= 0)
         {
+            vidaOn0.SetActive(true);
+            vidaOn1.SetActive(false);
             vidaOn2.SetActive(false);
+            vidaOn3.SetActive(false);
             Debug.Log("GameOver");
         }
-
     }
-
 }
