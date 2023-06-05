@@ -3,32 +3,42 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     public float velocidade;
     public float forcaDoPulo;
     public float forcaDoPuloDuplo;
+    public float speed = 0f;
+
     public string direcao;
-    float speed = 0f;
 
     public bool estaPulando;
     public bool puloDuplo;
     public bool hasWeapon = true;
 
+    private int vida;
+    public int vidaMaxima = 4;
+
+
     public ProjectileBehaviour ProjectilePre;
     public Transform LaunchOffset;
     public Transform feet;
+    public PhysicsMaterial2D quica;
+    public Animator animator;
 
-    public GameObject garfoquica;
+
+    [SerializeField] GameObject vidaOn1;
+    [SerializeField] GameObject vidaOn2;
+    [SerializeField] GameObject vidaOn3;
 
     private Rigidbody2D personagem;
-    public PhysicsMaterial2D quica;
 
 
-    public Animator animator;
     void Start()
     {
         personagem = GetComponent<Rigidbody2D>();
+        vida = vidaMaxima;
     }
 
     void Update()
@@ -131,7 +141,7 @@ public class PlayerController : MonoBehaviour
     }
     void Quica()
     {
-        if (estaPulando)
+        if (estaPulando && hasWeapon == true)
         {
             animator.SetBool("isJumping", true);
             if (Input.GetKey(KeyCode.E))
@@ -152,11 +162,39 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "chão")
+        if (collision.gameObject.tag == "enemy")
         {
-            
+            Dano();
         }
     }
+
+    public void Dano()
+    {
+        vida -= 1;
+        Debug.Log(vida);
+        if (vida == 1)
+        {
+            vidaOn1.SetActive(true);
+            vidaOn2.SetActive(false);
+        }
+        if (vida == 2)
+        {
+            vidaOn2.SetActive(true);
+            vidaOn3.SetActive(false);
+        }
+        if (vida == 3)
+        {
+            vidaOn3.SetActive(true);
+        }
+
+        if (vida <= 0)
+        {
+            vidaOn2.SetActive(false);
+            Debug.Log("GameOver");
+        }
+
+    }
+
 }

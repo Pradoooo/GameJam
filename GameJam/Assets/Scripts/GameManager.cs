@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI timeValue;
     public Transform telaGameOver;
     public Transform pauseMenu;
     public int totalLeite;
     [SerializeField] private TMPro.TextMeshProUGUI leiteText;
-    public int timeLeft;
 
-    private float timer;
 
     public static GameManager instance;
 
@@ -23,18 +20,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        timer += Time.deltaTime;
-        if (timer >= 1f)
-        {
-            timeLeft--;
-            timeValue.text = timeLeft.ToString();
-            timer = 0;
-        }
-
-        if (timeLeft <= 0)
-        {
-            GameOver();
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
