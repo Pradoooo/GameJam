@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bba54e9a0a70d7a4a9da02c0e1d44dac
+guid: 3f84c00445a3e8d46905d1d58b739f2b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,23 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pers_Run-Sheet_0
+      name: Arremesso_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9eb5a26b4be73f4cb9824e552df4583
-      internalID: 1957164094
+      spriteID: d50940a8b52cbee48b32a129cdb2699b
+      internalID: -91612282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pers_Run-Sheet_1
+      name: Arremesso_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2386e4604b2eca74abaf22c086a74fab
-      internalID: 173552772
+      spriteID: 2bee7573f081d0d458a508e3f553147f
+      internalID: 347409707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pers_Run-Sheet_2
+      name: Arremesso_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b08caca393c99f4381cab085bba5992
-      internalID: -246039444
+      spriteID: 1b90481ecb4e0e9499c57bc0d4ba3e37
+      internalID: 1818064265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pers_Run-Sheet_3
+      name: Arremesso_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,71 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 380d2de015876ce4cac7554fc0edaa39
-      internalID: -99462618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pers_Run-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4a20bff07e7c43478519d0a978758e6
-      internalID: 635908643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pers_Run-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0337cdcddd13bb04bb858b644ac97745
-      internalID: 1075525614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pers_Run-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f2ec504bc27f594c865a8c5894fffa9
-      internalID: -912303723
+      spriteID: 6d6e232d6b4e42c4b8726791a6ab21aa
+      internalID: 1480260877
       vertices: []
       indices: 
       edges: []
@@ -274,13 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pers_Run-Sheet_5: 1075525614
-      pers_Run-Sheet_0: 1957164094
-      pers_Run-Sheet_1: 173552772
-      pers_Run-Sheet_3: -99462618
-      pers_Run-Sheet_2: -246039444
-      pers_Run-Sheet_6: -912303723
-      pers_Run-Sheet_4: 635908643
+      Arremesso_0: -91612282
+      Arremesso_3: 1480260877
+      Arremesso_1: 347409707
+      Arremesso_2: 1818064265
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

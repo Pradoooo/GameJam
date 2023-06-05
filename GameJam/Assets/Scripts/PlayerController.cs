@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float forcaDoPulo;
     public float forcaDoPuloDuplo;
     public string direcao;
+    float speed = 0f;
 
     public bool estaPulando;
     public bool puloDuplo;
@@ -20,7 +22,10 @@ public class PlayerController : MonoBehaviour
     public GameObject garfoquica;
 
     private Rigidbody2D personagem;
+    public PhysicsMaterial2D quica;
 
+
+    public Animator animator;
     void Start()
     {
         personagem = GetComponent<Rigidbody2D>();
@@ -28,10 +33,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        speed = Input.GetAxisRaw("Horizontal") * velocidade;
         Corre();
         Pula();
         Arremessa();
         Quica();
+        animator.SetFloat("Speed", Mathf.Abs(speed));
+
     }
 
     void Arremessa()
@@ -39,12 +47,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && hasWeapon == true)
         {
             hasWeapon = false;
+            animator.SetBool("HasWeapon", false);
+            animator.SetTrigger("Attack");
             Instantiate(ProjectilePre, LaunchOffset.position, LaunchOffset.rotation);
         }
         if (Input.GetButtonDown("Fire2"))
         {
             hasWeapon = true;
-            
+            animator.SetBool("HasWeapon", true);
+
         }
     }
 
@@ -90,19 +101,19 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
             forcaDoPuloDuplo = 10;
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
-            
+
         }
-        if(collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
             forcaDoPuloDuplo = 20;
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
-            
+
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -110,9 +121,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             estaPulando = true;
-            Debug.Log ("estaPulando = " + estaPulando);
+            Debug.Log("estaPulando = " + estaPulando);
         }
-        if(collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
             estaPulando = true;
             Debug.Log("estaPulando = " + estaPulando);
@@ -122,11 +133,30 @@ public class PlayerController : MonoBehaviour
     {
         if (estaPulando)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            animator.SetBool("isJumping", true);
+            if (Input.GetKey(KeyCode.E))
             {
-                garfoquica.SetActive(true);
+                personagem.sharedMaterial = quica;
+                animator.SetTrigger("Bounce");
+                animator.SetBool("isJumping", false);
+            }
+            else
+            {
+                personagem.sharedMaterial = null;
             }
         }
+        else
+        {
+            
+            animator.SetBool("isJumping", false);
+        }
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "chão")
+        {
+            
+        }
     }
 }
