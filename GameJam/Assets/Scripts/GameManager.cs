@@ -8,11 +8,18 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI timeValue;
     public Transform telaGameOver;
     public Transform pauseMenu;
-
+    public int totalLeite;
+    [SerializeField] private TMPro.TextMeshProUGUI leiteText;
     public int timeLeft;
+
     private float timer;
 
+    public static GameManager instance;
 
+    void Start()
+    {
+        instance = this;
+    }
     void Update()
     {
 
@@ -73,5 +80,10 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Sair do jogo");
         Application.Quit();
+    }
+
+    public void UpdateLeiteText()
+    {
+        leiteText.text = totalLeite.ToString();
     }
 }
