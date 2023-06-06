@@ -10,6 +10,7 @@ TagManager:
   - paredeDireita
   - paredeEsquerda
   - garfo
+  - prisao
   layers:
   - Default
   - TransparentFX

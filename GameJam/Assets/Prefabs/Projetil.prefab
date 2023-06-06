@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProjetilGarfo: {fileID: 0}
-  speedGarfo: 4.5
+  speedGarfo: 15
 --- !u!61 &3675335693924757435
 BoxCollider2D:
   m_ObjectHideFlags: 0
