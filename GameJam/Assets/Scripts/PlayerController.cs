@@ -45,12 +45,38 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         speed = Input.GetAxisRaw("Horizontal") * velocidade;
+        animator.SetFloat("Speed", Mathf.Abs(speed));
+        Arremessa();
         Corre();
         Pula();
-        Arremessa();
         Quica();
-        animator.SetFloat("Speed", Mathf.Abs(speed));
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo"))
+        {
+            estaPulando = false;
+            Debug.Log("estaPulando = " + estaPulando);
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo"))
+        {
+            estaPulando = true;
+            Debug.Log("estaPulando = " + estaPulando);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            Dano();
+        }
     }
 
     void Arremessa()
@@ -84,10 +110,6 @@ public class PlayerController : MonoBehaviour
             direcao = "esquerda";
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
-        //if (Input.GetAxis("Horizontal") == 0f)
-        //{
-
-        //}
     }
 
     void Pula()
@@ -110,37 +132,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            forcaDoPuloDuplo = 10;
-            estaPulando = false;
-            Debug.Log("estaPulando = " + estaPulando);
-
-        }
-        if (collision.gameObject.layer == 9)
-        {
-            forcaDoPuloDuplo = 20;
-            estaPulando = false;
-            Debug.Log("estaPulando = " + estaPulando);
-
-        }
-    }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            estaPulando = true;
-            Debug.Log("estaPulando = " + estaPulando);
-        }
-        if (collision.gameObject.layer == 9)
-        {
-            estaPulando = true;
-            Debug.Log("estaPulando = " + estaPulando);
-        }
-    }
     void Quica()
+
     {
         if (estaPulando && hasWeapon == true)
         {
@@ -160,14 +153,6 @@ public class PlayerController : MonoBehaviour
         {
             
             animator.SetBool("isJumping", false);
-        }
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "enemy")
-        {
-            Dano();
         }
     }
 

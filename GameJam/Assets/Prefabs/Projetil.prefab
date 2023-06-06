@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2860752802936163813}
   m_Layer: 9
   m_Name: Projetil
-  m_TagString: Untagged
+  m_TagString: garfo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5dfdd7979b7984fa9938ee0c452bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProjetilGarfo: {fileID: 0}
   speedGarfo: 4.5
 --- !u!61 &3675335693924757435
 BoxCollider2D:
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 71340346752793386}
   m_Layer: 9
   m_Name: ProjetilGarfo
-  m_TagString: Untagged
+  m_TagString: garfo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
