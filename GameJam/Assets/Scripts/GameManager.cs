@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void GameOver()
+    public void GameOver()
     {
         telaGameOver.gameObject.SetActive(true);
         Time.timeScale = 0;

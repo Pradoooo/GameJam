@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool hasWeapon = true;
     public bool isAtk;
     private bool isTakingDamage = false;
+    private bool takingdmg = false;
 
     private int vida;
     public int vidaMaxima = 4;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D quica;
     public Animator animator;
     public Transform enemy;
+    public Animator vaca;
     
     [SerializeField] GameObject vidaOn0;
     [SerializeField] GameObject vidaOn1;
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo"))
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao"))
         {
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
@@ -80,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo"))
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao"))
         {
             estaPulando = true;
             Debug.Log("estaPulando = " + estaPulando);
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
             Dano();
             if(vida > 0)
             {
-                animator.SetTrigger("Damage");
+                animator.SetBool("Damage", true);
             }
         }
     }
@@ -182,6 +184,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dano()
     {
+        takingdmg = true;
         if (!isTakingDamage)
         {
             Vector2 knockbackDirection = transform.position - enemy.position;
@@ -222,9 +225,8 @@ public class PlayerController : MonoBehaviour
             vidaOn1.SetActive(false);
             vidaOn2.SetActive(false);
             vidaOn3.SetActive(false);
-            Debug.Log("GameOver");
             animator.SetTrigger("Death");
-            
+           
         }
     }
     public void vacas()
@@ -266,6 +268,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             qtdvacas++;
             vacas();
+            vaca.SetTrigger("Freed");
         }
     }
     private IEnumerator DoKnockback(Vector2 direction)
@@ -287,7 +290,11 @@ public class PlayerController : MonoBehaviour
     }
     public void AnimationFinished()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        GameManager.instance.GameOver();
+    }
+    public void DmgFinished()
+    {
+        takingdmg = false;
+        animator.SetBool("Damage", false);
     }
 }

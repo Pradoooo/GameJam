@@ -26,7 +26,7 @@ public class GetItem : MonoBehaviour
             GameManager.instance.totalLeite += leite;
             GameManager.instance.UpdateLeiteText();
 
-            Destroy(gameObject, 0.25f);
+            //Destroy(gameObject, 0.25f);
         }
     }
 }
