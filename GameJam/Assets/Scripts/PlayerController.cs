@@ -7,6 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public AudioSource audioSourceAttack;
+    public AudioSource audioSourceJump;
+    public AudioSource audioSourceDamage;
+    public AudioSource audioSourceDeath;
+    public AudioSource audioSourceQuica;
+
     public float velocidade;
     public float forcaDoPulo;
     public float forcaDoPuloDuplo;
