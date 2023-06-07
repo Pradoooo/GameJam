@@ -34,15 +34,17 @@ public class PlayerController : MonoBehaviour
     public int vidaMaxima = 4;
     public int qtdvacas = 0;
 
-
+    
+    
     public ProjectileBehaviour ProjectilePre;
     public Transform LaunchOffset;
     public Transform feet;
     public PhysicsMaterial2D quica;
     public Animator animator;
     public Transform enemy;
-    public Animator vaca;
     
+
+    [SerializeField] GameObject vacaspawn;
     [SerializeField] GameObject vidaOn0;
     [SerializeField] GameObject vidaOn1;
     [SerializeField] GameObject vidaOn2;
@@ -84,13 +86,13 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             qtdvacas++;
             vacas();
-            vaca.SetTrigger("Freed");
+            Instantiate(vacaspawn, transform.position, transform.rotation);
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao"))
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao") || collision.gameObject.CompareTag("vaca"))
         {
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao"))
+        if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao") || collision.gameObject.CompareTag("vaca"))
         {
             estaPulando = true;
             Debug.Log("estaPulando = " + estaPulando);
@@ -123,14 +125,15 @@ public class PlayerController : MonoBehaviour
 
     void Arremessa()
     {
-        if (Input.GetButtonDown("Fire1") && hasWeapon == true)
+        if (Input.GetKeyDown(KeyCode.F) && hasWeapon == true)
         {
+            audioSourceAttack.Play();
             hasWeapon = false;
             animator.SetBool("HasWeapon", false);
             animator.SetTrigger("Attack");
             Instantiate(ProjectilePre, LaunchOffset.position, LaunchOffset.rotation);
         }
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             hasWeapon = true;
             animator.SetBool("HasWeapon", true);
@@ -156,8 +159,10 @@ public class PlayerController : MonoBehaviour
 
     void Pula()
     {
+        
         if (Input.GetButtonDown("Jump"))
         {
+            audioSourceJump.Play();
             if (!estaPulando)
             {
                 personagem.AddForce(new Vector2(0f, forcaDoPuloDuplo), ForceMode2D.Impulse);
@@ -202,6 +207,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dano()
     {
+        audioSourceDamage.Play();
         takingdmg = true;
         if (!isTakingDamage)
         {
@@ -243,6 +249,7 @@ public class PlayerController : MonoBehaviour
             vidaOn1.SetActive(false);
             vidaOn2.SetActive(false);
             vidaOn3.SetActive(false);
+            audioSourceDeath.Play();
             animator.SetTrigger("Death");
            
         }
@@ -307,4 +314,5 @@ public class PlayerController : MonoBehaviour
         takingdmg = false;
         animator.SetBool("Damage", false);
     }
+    
 }

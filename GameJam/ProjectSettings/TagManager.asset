@@ -11,6 +11,7 @@ TagManager:
   - paredeEsquerda
   - garfo
   - prisao
+  - vaca
   layers:
   - Default
   - TransparentFX

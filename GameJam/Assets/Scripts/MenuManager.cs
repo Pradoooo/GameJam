@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour
     public float rotationSpeed = 2f;
     public void StartGame()
     {
-        SceneManager.LoadScene("Fase1");
+        SceneManager.LoadScene("Intro");
     }
 
     public void ExitGame()

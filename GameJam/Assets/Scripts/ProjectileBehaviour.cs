@@ -13,7 +13,7 @@ public class ProjectileBehaviour : MonoBehaviour
     private void Update()
     {
         Arremesso();
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
 
             Destroy(gameObject);

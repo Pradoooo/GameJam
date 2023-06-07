@@ -6,6 +6,7 @@ public class GetItem : MonoBehaviour
 {
     private CircleCollider2D circle;
     private SpriteRenderer sr;
+    public AudioSource audioSourceLeite;
 
     public int leite;
 
@@ -21,7 +22,7 @@ public class GetItem : MonoBehaviour
         {
             sr.enabled = false;
             circle.enabled = false;
-
+            audioSourceLeite.Play();
 
             GameManager.instance.totalLeite += leite;
             GameManager.instance.UpdateLeiteText();

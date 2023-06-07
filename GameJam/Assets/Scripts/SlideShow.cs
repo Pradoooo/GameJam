@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SlideShow : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class SlideShow : MonoBehaviour
         if (currentIndex >= slides.Length)
         {
             // Volta para o início do slideshow
-            currentIndex = 0;
+            SceneManager.LoadScene("Fase1");
         }
 
         // Exibe a próxima imagem
