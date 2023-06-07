@@ -70,6 +70,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("prisao") && isAtk == true)
+        {
+            Destroy(collision.gameObject);
+            qtdvacas++;
+            vacas();
+            vaca.SetTrigger("Freed");
+        }
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao"))
@@ -77,7 +88,6 @@ public class PlayerController : MonoBehaviour
             estaPulando = false;
             Debug.Log("estaPulando = " + estaPulando);
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -93,8 +103,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
+
             enemy = collision.transform;
-            
             Dano();
             if(vida > 0)
             {
@@ -102,6 +112,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
 
     void Arremessa()
     {
@@ -229,6 +240,7 @@ public class PlayerController : MonoBehaviour
            
         }
     }
+
     public void vacas()
     {
 
@@ -261,37 +273,28 @@ public class PlayerController : MonoBehaviour
             vacaOn3.SetActive(false);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("prisao") && isAtk == true)
-        {
-            Destroy(collision.gameObject);
-            qtdvacas++;
-            vacas();
-            vaca.SetTrigger("Freed");
-        }
-    }
+
+
     private IEnumerator DoKnockback(Vector2 direction)
     {
         isTakingDamage = true;
 
-        // Aplica a força do knockback
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
         rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
 
-        // Espera a duração do knockback
         yield return new WaitForSeconds(knockbackDuration);
 
-        // Restaura a posição normal do personagem
         rb.velocity = Vector2.zero;
 
         isTakingDamage = false;
     }
+
     public void AnimationFinished()
     {
         GameManager.instance.GameOver();
     }
+
     public void DmgFinished()
     {
         takingdmg = false;
