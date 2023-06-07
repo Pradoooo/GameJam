@@ -3898,6 +3898,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7135999089082505333, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999089082505333, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135999089236448908, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999089236448908, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135999089626448503, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999089626448503, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135999089702136336, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999089702136336, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 7135999090058079326, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
       propertyPath: m_Name
       value: UI 1
@@ -3985,6 +4017,22 @@ PrefabInstance:
     - target: {fileID: 7135999090058079330, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135999090311298707, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999090311298707, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135999090691465147, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1726670710}
+    - target: {fileID: 7135999090691465147, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cd76dfe0bf495c459b951a188b39575, type: 3}
