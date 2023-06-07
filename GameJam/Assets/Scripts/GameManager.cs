@@ -69,6 +69,6 @@ public class GameManager : MonoBehaviour
 
     public void UpdateLeiteText()
     {
-        leiteText.text = totalLeite.ToString();
+        leiteText.text = "x " + totalLeite.ToString();
     }
 }
