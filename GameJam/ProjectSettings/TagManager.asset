@@ -12,6 +12,7 @@ TagManager:
   - garfo
   - prisao
   - vaca
+  - boss
   layers:
   - Default
   - TransparentFX

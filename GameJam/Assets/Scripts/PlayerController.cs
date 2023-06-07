@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSourceJump;
     public AudioSource audioSourceDamage;
     public AudioSource audioSourceDeath;
-    public AudioSource audioSourceQuica;
+    
 
     public float velocidade;
     public float forcaDoPulo;
@@ -34,8 +34,9 @@ public class PlayerController : MonoBehaviour
     public int vidaMaxima = 4;
     public int qtdvacas = 0;
 
-    
-    
+
+
+
     public ProjectileBehaviour ProjectilePre;
     public Transform LaunchOffset;
     public Transform feet;
@@ -59,7 +60,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
         personagem = GetComponent<Rigidbody2D>();
         vida = vidaMaxima;
         qtdvacas = 0;
@@ -119,6 +119,12 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("Damage", true);
             }
+        }
+        if (collision.gameObject.tag == "boss")
+        {
+            Dano();
+            Dano();
+            Dano();
         }
     }
 
@@ -209,12 +215,6 @@ public class PlayerController : MonoBehaviour
     {
         audioSourceDamage.Play();
         takingdmg = true;
-        if (!isTakingDamage)
-        {
-            Vector2 knockbackDirection = transform.position - enemy.position;
-            knockbackDirection.Normalize();
-            StartCoroutine(DoKnockback(knockbackDirection));
-        }
 
         vida -= 1;
         Debug.Log(vida);
@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour
             vidaOn3.SetActive(false);
             audioSourceDeath.Play();
             animator.SetTrigger("Death");
-           
+            GameManager.instance.GameOver();
         }
     }
 
@@ -277,6 +277,16 @@ public class PlayerController : MonoBehaviour
             vacaOn1.SetActive(true);
             vacaOn2.SetActive(true);
             vacaOn3.SetActive(true);
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1;
+                if(nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+                else{
+                SceneManager.LoadScene("Menu");
+            }
+
         }
         else
 
@@ -286,22 +296,6 @@ public class PlayerController : MonoBehaviour
             vacaOn2.SetActive(false);
             vacaOn3.SetActive(false);
         }
-    }
-
-
-    private IEnumerator DoKnockback(Vector2 direction)
-    {
-        isTakingDamage = true;
-
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.zero;
-        rb.AddForce(direction * knockbackForce, ForceMode2D.Impulse);
-
-        yield return new WaitForSeconds(knockbackDuration);
-
-        rb.velocity = Vector2.zero;
-
-        isTakingDamage = false;
     }
 
     public void AnimationFinished()
