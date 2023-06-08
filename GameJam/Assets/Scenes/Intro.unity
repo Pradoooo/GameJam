@@ -479,7 +479,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 2
   m_Text: E foram levadas para um planeta roxo onde tudo era feito de leite.
 --- !u!222 &538602411
 CanvasRenderer:
@@ -635,7 +635,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 2
   m_Text: "Um dia, enquanto Molly dormia, uma luz roxa aparece e elas s\xE3o abduzidas."
 --- !u!222 &723475405
 CanvasRenderer:
@@ -1184,7 +1184,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 2
   m_Text: Molly vivia feliz em sua fazendinha com suas vaquinhas.
 --- !u!222 &1545350812
 CanvasRenderer:

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSourceJump;
     public AudioSource audioSourceDamage;
     public AudioSource audioSourceDeath;
+    public AudioSource audioSourceVaca;
     
 
     public float velocidade;
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             qtdvacas++;
             vacas();
+            audioSourceVaca.Play();
             Instantiate(vacaspawn, transform.position, transform.rotation);
         }
     }
