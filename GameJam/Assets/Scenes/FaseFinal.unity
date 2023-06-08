@@ -1946,6 +1946,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &727902753 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1335357006759401407, guid: 4182119603bffe54b81a576353d0cc75, type: 3}
+  m_PrefabInstance: {fileID: 2004378511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728816182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,6 +5615,10 @@ PrefabInstance:
       propertyPath: vidaOn3
       value: 
       objectReference: {fileID: 1239440246}
+    - target: {fileID: 2018001252833027311, guid: 4182119603bffe54b81a576353d0cc75, type: 3}
+      propertyPath: audioSourceVaca
+      value: 
+      objectReference: {fileID: 727902753}
     - target: {fileID: 2018001252833027313, guid: 4182119603bffe54b81a576353d0cc75, type: 3}
       propertyPath: m_Name
       value: Player
