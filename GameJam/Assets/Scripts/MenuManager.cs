@@ -15,7 +15,6 @@ public class MenuManager : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("Sair do jogo");
         Application.Quit();
     }
     private void Update()

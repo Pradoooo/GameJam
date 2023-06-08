@@ -7,10 +7,7 @@ public class ProjectileBehaviour : MonoBehaviour
     public float speedGarfo = 4.5f;
     public AudioSource audioSourceAlien;
 
-    private void Start()
-    {
-        //rd  GetComponent<Rigidbody2D>();
-    }
+
     private void Update()
     {
         Arremesso();
@@ -24,7 +21,6 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
-            Debug.Log("Colidiu inimgo");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {

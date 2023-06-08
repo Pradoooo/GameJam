@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao") || collision.gameObject.CompareTag("vaca"))
         {
             estaPulando = false;
-            Debug.Log("estaPulando = " + estaPulando);
         }
     }
 
@@ -106,7 +105,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("chão") || collision.gameObject.CompareTag("garfo") || collision.gameObject.CompareTag("prisao") || collision.gameObject.CompareTag("vaca"))
         {
             estaPulando = true;
-            Debug.Log("estaPulando = " + estaPulando);
         }
     }
 
@@ -219,7 +217,6 @@ public class PlayerController : MonoBehaviour
         takingdmg = true;
 
         vida -= 1;
-        Debug.Log(vida);
         if (vida == 1)
         {
             vidaOn0.SetActive(false);
