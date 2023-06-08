@@ -4646,6 +4646,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7130663078576592146, guid: 786c1a5a858e3534c835cf3343da28bc, type: 3}
+      propertyPath: audioSourceQuica
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7130663078576592155, guid: 786c1a5a858e3534c835cf3343da28bc, type: 3}
       propertyPath: m_Name
       value: Alien
@@ -4694,7 +4698,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 130266130473902209, guid: 786c1a5a858e3534c835cf3343da28bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 786c1a5a858e3534c835cf3343da28bc, type: 3}
 --- !u!1001 &9003607547936005062
 PrefabInstance:

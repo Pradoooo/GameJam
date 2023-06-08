@@ -5,6 +5,7 @@ public class ProjectileBehaviour : MonoBehaviour
 {
     [SerializeField] public GameObject ProjetilGarfo;
     public float speedGarfo = 4.5f;
+    public AudioSource audioSourceAlien;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class ProjectileBehaviour : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
+                audioSourceAlien.Play();
                 enemy.Die();
             }
         }
